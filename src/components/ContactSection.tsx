@@ -260,19 +260,19 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-6 md:p-8 space-y-5 backdrop-blur-sm"
+            className="w-full max-w-full overflow-y-auto overflow-x-hidden bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5 backdrop-blur-sm"
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1.5 block">Nombre</label>
                 <input type="text" name="nombre" required maxLength={100}
-                  className="w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full h-12 appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
                   placeholder="Tu nombre" />
               </div>
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1.5 block">Email</label>
                 <input type="email" required maxLength={255}
-                  className="w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full h-12 appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
                   placeholder="tu@email.com" />
               </div>
             </div>
@@ -280,13 +280,13 @@ const ContactSection = () => {
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1.5 block">Teléfono</label>
                 <input type="tel" maxLength={20}
-                  className="w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full h-12 appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
                   placeholder="600 000 000" />
               </div>
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1.5 block">Nº personas</label>
                 <input type="number" name="number" min={1} max={20}
-                  className="w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full h-12 appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors"
                   placeholder="2" />
               </div>
             </div>
@@ -298,7 +298,7 @@ const ContactSection = () => {
                   name="date"
                   onChange={(e) => handleDateChange(e.target.value)}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground focus:outline-none focus:border-accent transition-colors" 
+                  className="w-full h-12 appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground focus:outline-none focus:border-accent transition-colors" 
                 />
               </div>
               <div>
@@ -306,7 +306,7 @@ const ContactSection = () => {
                 <select 
                   name="time"
                   onChange={(e) => validateTime(e.target.value, selectedDate)}
-                  className={`w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground focus:outline-none focus:border-accent transition-colors cursor-pointer ${
+                  className={`w-full h-12 appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground focus:outline-none focus:border-accent transition-colors cursor-pointer ${
                     timeError 
                       ? 'border-red-500 focus:border-red-500' 
                       : ''
@@ -340,7 +340,7 @@ const ContactSection = () => {
             <div>
               <label className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50 mb-1.5 block">Mensaje</label>
               <textarea rows={3} name="message" maxLength={1000}
-                className="w-full rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors resize-none"
+                className="w-full appearance-none rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors resize-none"
                 placeholder="Alergias, peticiones especiales..." />
             </div>
             <button type="submit" disabled={sending}

@@ -28,7 +28,7 @@ const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="Trópico" 
-            className="h-20 w-auto object-contain block"
+            className="h-10 md:h-12 w-auto object-contain block"
           />
         </a>
 
