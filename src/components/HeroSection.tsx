@@ -37,8 +37,10 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#carta"
-              className="rounded-lg bg-accent text-accent-foreground px-8 py-4 text-base font-semibold hover:brightness-110 transition-all w-full sm:w-auto"
+            href="https://menu.qamarero.com/mesa/Bxb3WGmYRbay8UpaIRM8NQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-lg px-10 py-5 text-base font-semibold shadow-lg hover:bg-accent/90 hover:-translate-y-1 transition-all duration-300 hover:scale-105"
             >
               Ver carta
             </a>
@@ -47,15 +49,6 @@ const HeroSection = () => {
               className="rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-base font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors w-full sm:w-auto"
             >
               Reservar mesa
-            </a>
-            <a
-              href="https://wa.me/34966961972?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-green-600 text-white px-8 py-4 text-base font-semibold hover:bg-green-700 transition-all w-full sm:w-auto flex items-center justify-center gap-2"
-            >
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp
             </a>
           </div>
         </motion.div>

@@ -23,9 +23,13 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-primary/95 backdrop-blur-md shadow-card" : "bg-transparent"}`}>
-      <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <a href="#hero" className="font-display text-xl font-bold text-primary-foreground tracking-[0.15em] uppercase">
-          Trópico
+      <div className="container mx-auto flex items-center justify-between py-3 px-4">
+        <a href="#hero" className="flex items-center">
+          <img 
+            src="/logo.png" 
+            alt="Trópico" 
+            className="h-20 w-auto object-contain block"
+          />
         </a>
 
         {/* Desktop */}
@@ -51,7 +55,7 @@ const Navbar = () => {
               <Instagram className="w-4 h-4" />
             </a>
             <a
-              href="https://wa.me/34966961972?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
+              href="https://wa.me/34633549686?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-foreground/60 hover:text-green-400 transition-colors"
@@ -113,7 +117,7 @@ const Navbar = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://wa.me/34966961972?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
+                  href="https://wa.me/34633549686?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}

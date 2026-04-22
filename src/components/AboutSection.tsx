@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import aboutImg from "@/assets/about-interior.jpg";
+import aboutImg from "@/assets/about-interiorr.jpg";
 import { Flame, Users, Heart } from "lucide-react";
 
 const features = [

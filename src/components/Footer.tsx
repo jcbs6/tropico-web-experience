@@ -23,7 +23,7 @@ const Footer = () => (
               <Phone className="w-3 h-3" />
               966 96 19 72
             </a>
-            <a href="https://wa.me/34966961972?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar" 
+            <a href="https://wa.me/34633549686?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar" 
                target="_blank" rel="noopener noreferrer"
                className="flex items-center justify-center md:justify-start gap-2 text-xs text-primary-foreground/50 hover:text-green-400 transition-colors">
               <MessageCircle className="w-3 h-3" />
@@ -40,9 +40,15 @@ const Footer = () => (
         <div className="text-center md:text-right">
           <h4 className="font-display text-sm text-primary-foreground font-semibold mb-3">Legal</h4>
           <div className="space-y-2 mb-4">
-            <a href="#" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">Aviso legal</a>
-            <a href="#" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">Privacidad</a>
-            <a href="#" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">Cookies</a>
+            <a href="/aviso-legal" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">
+              Aviso legal
+            </a>
+            <a href="/privacidad" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">
+              Política de privacidad
+            </a>
+            <a href="/cookies" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">
+              Política de cookies
+            </a>
           </div>
           <div className="flex items-center justify-center md:justify-end gap-4">
             <a
@@ -55,7 +61,7 @@ const Footer = () => (
               <Instagram className="w-4 h-4" />
             </a>
             <a
-              href="https://wa.me/34966961972?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
+              href="https://wa.me/34633549686?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-foreground/50 hover:text-green-400 transition-colors"
