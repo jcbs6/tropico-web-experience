@@ -81,7 +81,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-primary-foreground"
+          className="md:hidden text-primary-foreground hover:scale-110 transition-transform"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -92,24 +92,30 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden bg-primary/95 backdrop-blur-md"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden overflow-hidden bg-primary/90 backdrop-blur-md"
           >
-            <ul className="flex flex-col items-center gap-4 py-6">
+            <ul className="flex flex-col items-center space-y-6 py-8">
               {links.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="text-base font-medium text-primary-foreground/80 hover:text-accent transition-colors"
+                    className="text-base font-medium text-primary-foreground/80 hover:text-accent transition-colors duration-200"
                   >
                     {l.label}
                   </a>
                 </li>
               ))}
-              <li className="flex items-center gap-4 pt-2">
+              <li className="mt-8 flex justify-center">
+                <div className="scale-110">
+                  <LanguageSelector />
+                </div>
+              </li>
+              <li className="flex items-center gap-4 pt-6">
                 <a
                   href="https://www.instagram.com/tropico.restobar/"
                   target="_blank"
@@ -135,7 +141,7 @@ const Navbar = () => {
                 <a
                   href="#contacto"
                   onClick={() => setOpen(false)}
-                  className="rounded-lg bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold"
+                  className="rounded-lg bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold hover:scale-105 transition-transform"
                 >
                   Reservar mesa
                 </a>
