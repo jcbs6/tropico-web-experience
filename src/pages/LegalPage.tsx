@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Scale, Building, FileText, Shield, MapPin, Mail, Phone, ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../hooks/useLanguage";
 
 const LegalPage = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -16,10 +19,10 @@ const LegalPage = () => {
             className="max-w-4xl mx-auto"
           >
             <h1 className="font-display text-4xl md:text-6xl text-primary-foreground font-bold mb-6">
-              Aviso Legal
+              {t('legal_title')}
             </h1>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-              Información legal sobre Trópico Restobar. Cumplimos con la normativa para ofrecerte un servicio transparente y seguro.
+              {t('legal_intro')}
             </p>
           </motion.div>
         </div>
@@ -30,10 +33,10 @@ const LegalPage = () => {
         <nav className="flex items-center text-sm text-muted-foreground">
           <Link to="/" className="flex items-center hover:text-accent transition-colors">
             <Home className="w-4 h-4 mr-1" />
-            Inicio
+            {t('nav_inicio')}
           </Link>
           <ChevronRight className="w-4 h-4 mx-2" />
-          <span className="text-foreground font-medium">Aviso Legal</span>
+          <span className="text-foreground font-medium">{t('legal_title')}</span>
         </nav>
       </div>
 
@@ -55,20 +58,20 @@ const LegalPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Datos del Titular
+                    {t('legal_company_info')}
                   </h2>
                   <div className="space-y-4">
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Nombre Comercial</h3>
-                      <p className="text-muted-foreground">Trópico Restobar</p>
+                      <h3 className="font-semibold text-foreground mb-2">{t('legal_company_name')}</h3>
+                      <p className="text-muted-foreground">{t('legal_company_name')}</p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Actividad Principal</h3>
-                      <p className="text-muted-foreground">Restaurante y bar especializado en tapas mediterráneas</p>
+                      <h3 className="font-semibold text-foreground mb-2">{t('legal_purpose_title')}</h3>
+                      <p className="text-muted-foreground">{t('legal_purpose_text')}</p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Ubicación</h3>
-                      <p className="text-muted-foreground">España - Comunidad Valenciana</p>
+                      <h3 className="font-semibold text-foreground mb-2">{t('legal_address')}</h3>
+                      <p className="text-muted-foreground">{t('legal_address')}</p>
                     </div>
                   </div>
                 </div>
@@ -88,25 +91,28 @@ const LegalPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Finalidad del Sitio Web
+                    {t('legal_terms_title')}
                   </h2>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">Información Comercial:</span> Presentar nuestros servicios, carta y especialidades.
+                        <span className="font-semibold text-foreground">{t('legal_terms_subtitle')}</span>
+                        {t('legal_terms_text')}
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">Gestión de Reservas:</span> Facilitar el proceso de reserva de mesas online.
+                        <span className="font-semibold text-foreground">{t('legal_terms_subtitle2')}</span>
+                        {t('legal_terms_text2')}
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">Contacto Directo:</span> Proporcionar canales de comunicación con nuestros clientes.
+                        <span className="font-semibold text-foreground">{t('legal_terms_subtitle3')}</span>
+                        {t('legal_terms_text3')}
                       </p>
                     </div>
                   </div>
@@ -127,7 +133,7 @@ const LegalPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Condiciones de Uso
+                    {t('legal_limitations_title')}
                   </h2>
                   <div className="space-y-4">
                     <div className="bg-sand-gradient rounded-lg p-4">
@@ -137,15 +143,15 @@ const LegalPage = () => {
                       </p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Propiedad Intelectual</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('legal_ip_title')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Todos los contenidos (textos, imágenes, diseños) son propiedad de Trópico Restobar y están protegidos por la ley de propiedad intelectual.
+                        {t('legal_ip_text')}
                       </p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Limitación de Responsabilidad</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('legal_limitations_title')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Trópico Restobar no se responsabiliza por el uso inadecuado del sitio web ni por los contenidos de enlaces externos.
+                        {t('legal_limitations_text')}
                       </p>
                     </div>
                   </div>
@@ -166,25 +172,28 @@ const LegalPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Marco Legal
+                    {t('legal_modifications_title')}
                   </h2>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">Legislación Aplicable:</span> Ley de Servicios de la Sociedad de la Información (LSSI) y Reglamento General de Protección de Datos (RGPD).
+                        <span className="font-semibold text-foreground">{t('legal_modifications_subtitle')}</span>
+                        {t('legal_modifications_text')}
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">Jurisdicción:</span> Para cualquier controversia, las partes se someten a los tribunales de España.
+                        <span className="font-semibold text-foreground">{t('legal_modifications_subtitle2')}</span>
+                        {t('legal_modifications_text2')}
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">Actualización:</span> Nos reservamos el derecho de modificar este aviso legal en cualquier momento.
+                        <span className="font-semibold text-foreground">{t('legal_modifications_subtitle3')}</span>
+                        {t('legal_modifications_text3')}
                       </p>
                     </div>
                   </div>
@@ -201,16 +210,17 @@ const LegalPage = () => {
             >
               <div className="text-center mb-8">
                 <h2 className="font-display text-3xl font-bold mb-4">
-                  Información de Contacto Legal
+                  {t('legal_contact_title')}
                 </h2>
                 <p className="text-primary-foreground/90">
-                  Para cualquier consulta legal sobre nuestro sitio web, contacta con nosotros.
+                  {t('legal_contact_text')}
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                   <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                   <div>
+                    <p className="font-semibold">{t('legal_contact_email')}</p>
                     <p className="font-semibold">Email Legal</p>
                     <p className="text-primary-foreground/80">tropicobar102@gmail.com</p>
                   </div>

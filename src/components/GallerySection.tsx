@@ -12,6 +12,7 @@ import foodLomo from "@/assets/food-lomo.jpg";
 import foodZamburiñas from "@/assets/food-zamburiñas.jpg";
 import foodBatido from "@/assets/food-batido.jpg";
 import foodCake from "@/assets/food-cake.jpg";
+import { useLanguage } from "../hooks/useLanguage";
 
 const images = [
   { src: galleryTapas, alt: "Tapas variadas" },
@@ -29,6 +30,7 @@ const images = [
 ];
 
 const GallerySection = () => {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -42,10 +44,10 @@ const GallerySection = () => {
           className="text-center mb-12"
         >
           <span className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">
-            Galería
+            {t('gallery_title')}
           </span>
           <h2 className="font-display text-3xl md:text-5xl text-foreground font-bold">
-            Entra con los ojos
+            {t('gallery_subtitle')}
           </h2>
         </motion.div>
 

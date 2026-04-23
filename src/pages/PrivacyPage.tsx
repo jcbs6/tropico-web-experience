@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Shield, User, Database, Eye, Mail, Phone, ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../hooks/useLanguage";
 
 const PrivacyPage = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -16,10 +19,10 @@ const PrivacyPage = () => {
             className="max-w-4xl mx-auto"
           >
             <h1 className="font-display text-4xl md:text-6xl text-primary-foreground font-bold mb-6">
-              Política de Privacidad
+              {t('privacy_title')}
             </h1>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-              Tu confianza es nuestra prioridad. Protegemos tus datos con el mismo cuidado que preparamos nuestros platos.
+              {t('privacy_intro')}
             </p>
           </motion.div>
         </div>
@@ -30,10 +33,10 @@ const PrivacyPage = () => {
         <nav className="flex items-center text-sm text-muted-foreground">
           <Link to="/" className="flex items-center hover:text-accent transition-colors">
             <Home className="w-4 h-4 mr-1" />
-            Inicio
+            {t('nav_inicio')}
           </Link>
           <ChevronRight className="w-4 h-4 mx-2" />
-          <span className="text-foreground font-medium">Política de Privacidad</span>
+          <span className="text-foreground font-medium">{t('privacy_title')}</span>
         </nav>
       </div>
 
@@ -55,11 +58,10 @@ const PrivacyPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Tu Privacidad, Nuestra Responsabilidad
+                    {t('privacy_purpose_title')}
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    En Trópico Restobar, tratamos tus datos personales con la máxima confidencialidad y seguridad. 
-                    Esta política explica cómo recopilamos, usamos y protegemos tu información.
+                    {t('privacy_purpose_text')}
                   </p>
                 </div>
               </div>
@@ -78,25 +80,25 @@ const PrivacyPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Información que Recopilamos
+                    {t('privacy_data_title')}
                   </h2>
                   <div className="space-y-4">
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Datos de Contacto</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('privacy_contact_subtitle')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Nombre, email, teléfono y dirección cuando realizas reservas o contactas con nosotros.
+                        {t('privacy_contact_text')}
                       </p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Datos de Navegación</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('privacy_navigation_subtitle')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Información técnica sobre cómo usas nuestra web para mejorar tu experiencia.
+                        {t('privacy_navigation_text')}
                       </p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
-                      <h3 className="font-semibold text-foreground mb-2">Información de Reservas</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('privacy_reservations_subtitle')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Detalles de tus reservas, preferencias y comunicaciones relacionadas.
+                        {t('privacy_reservations_text')}
                       </p>
                     </div>
                   </div>

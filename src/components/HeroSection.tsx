@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useLanguage } from "../hooks/useLanguage";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
@@ -26,13 +29,13 @@ const HeroSection = () => {
           </span>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 tracking-tight">
-            Sabor auténtico en
+            {t('hero_title').split(' ').slice(0, -2).join(' ')}
             <br />
-            <span className="text-accent">Playa de San Juan</span>
+            <span className="text-accent">{t('hero_title').split(' ').slice(-2).join(' ')}</span>
           </h1>
 
           <p className="font-body text-lg md:text-xl text-primary-foreground/75 max-w-xl mx-auto mb-10 leading-relaxed">
-            Desayunos, tapas y platos caseros que se disfrutan de verdad
+            {t('hero_subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -42,13 +45,13 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-lg px-10 py-5 text-base font-semibold shadow-lg hover:bg-accent/90 hover:-translate-y-1 transition-all duration-300 hover:scale-105"
             >
-              Ver carta
+              {t('hero_cta')}
             </a>
             <a
               href="#contacto"
               className="rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-base font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors w-full sm:w-auto"
             >
-              Reservar mesa
+              {t('hero_cta_alt')}
             </a>
           </div>
         </motion.div>

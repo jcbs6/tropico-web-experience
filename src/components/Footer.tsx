@@ -1,6 +1,10 @@
 import { Instagram, Phone, MessageCircle, Mail } from "lucide-react";
+import { useLanguage } from "../hooks/useLanguage";
 
-const Footer = () => (
+const Footer = () => {
+  const { t } = useLanguage();
+
+  return (
   <footer className="bg-primary border-t border-primary-foreground/10 py-10 px-4">
     <div className="container mx-auto">
       <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -11,13 +15,13 @@ const Footer = () => (
             Tropicobar Alicante Hosteleria 102 S.L.
           </p>
           <p className="text-primary-foreground/40 text-xs mt-2">
-            Sabor auténtico frente al Mediterráneo desde 2020
+            Sabor auténtico frente al Mediterráneo desde 2024
           </p>
         </div>
 
         {/* Contact */}
         <div className="text-center">
-          <h4 className="font-display text-sm text-primary-foreground font-semibold mb-3">Contacto</h4>
+          <h4 className="font-display text-sm text-primary-foreground font-semibold mb-3">{t('footer_contacto')}</h4>
           <div className="space-y-2">
             <a href="tel:+34966961972" className="flex items-center justify-center md:justify-start gap-2 text-xs text-primary-foreground/50 hover:text-accent transition-colors">
               <Phone className="w-3 h-3" />
@@ -41,13 +45,13 @@ const Footer = () => (
           <h4 className="font-display text-sm text-primary-foreground font-semibold mb-3">Legal</h4>
           <div className="space-y-2 mb-4">
             <a href="/aviso-legal" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">
-              Aviso legal
+              {t('footer_legal')}
             </a>
             <a href="/privacidad" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">
-              Política de privacidad
+              {t('footer_privacy')}
             </a>
             <a href="/cookies" className="block text-xs text-primary-foreground/50 hover:text-accent transition-colors">
-              Política de cookies
+              {t('footer_cookies')}
             </a>
           </div>
           <div className="flex items-center justify-center md:justify-end gap-4">
@@ -73,10 +77,12 @@ const Footer = () => (
         </div>
       </div>
       <p className="text-center text-primary-foreground/30 text-xs mt-6">
-        © {new Date().getFullYear()} Trópico Restobar. Todos los derechos reservados.
+        &copy; {new Date().getFullYear()} Trópico Restobar. {t('footer_derechos')}.
       </p>
     </div>
   </footer>
-);
+  );
+
+};
 
 export default Footer;

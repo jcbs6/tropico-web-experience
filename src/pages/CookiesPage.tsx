@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Cookie, Settings, Shield, CheckCircle, XCircle, ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../hooks/useLanguage";
 
 const CookiesPage = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -16,10 +19,10 @@ const CookiesPage = () => {
             className="max-w-4xl mx-auto"
           >
             <h1 className="font-display text-4xl md:text-6xl text-primary-foreground font-bold mb-6">
-              Política de Cookies
+              {t('cookies_title')}
             </h1>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-              Mejoramos tu experiencia con el uso responsable de cookies, como seleccionamos los mejores ingredientes.
+              {t('cookies_intro')}
             </p>
           </motion.div>
         </div>
@@ -30,10 +33,10 @@ const CookiesPage = () => {
         <nav className="flex items-center text-sm text-muted-foreground">
           <Link to="/" className="flex items-center hover:text-accent transition-colors">
             <Home className="w-4 h-4 mr-1" />
-            Inicio
+            {t('nav_inicio')}
           </Link>
           <ChevronRight className="w-4 h-4 mx-2" />
-          <span className="text-foreground font-medium">Política de Cookies</span>
+          <span className="text-foreground font-medium">{t('cookies_title')}</span>
         </nav>
       </div>
 
@@ -55,11 +58,10 @@ const CookiesPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    ¿Qué Son las Cookies?
+                    {t('cookies_what_are_title')}
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas nuestro sitio web. 
-                    Nos ayudan a recordar tus preferencias y mejorar tu experiencia en Trópico Restobar.
+                    {t('cookies_what_are_text')}
                   </p>
                 </div>
               </div>
@@ -78,34 +80,34 @@ const CookiesPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Tipos de Cookies que Usamos
+                    {t('cookies_types_title')}
                   </h2>
                   <div className="space-y-4">
                     <div className="bg-sand-gradient rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <CheckCircle className="w-5 h-5 text-green-600" />
-                        <h3 className="font-semibold text-foreground">Cookies Técnicas (Necesarias)</h3>
+                        <h3 className="font-semibold text-foreground">{t('cookies_technical_title')}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        Esenciales para el funcionamiento básico de nuestra web. Permiten la navegación y acceso a áreas seguras.
+                        {t('cookies_technical_text')}
                       </p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <CheckCircle className="w-5 h-5 text-blue-600" />
-                        <h3 className="font-semibold text-foreground">Cookies de Análisis</h3>
+                        <h3 className="font-semibold text-foreground">{t('cookies_analytics_title')}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        Nos ayudan a entender cómo interactúas con nuestro sitio para mejorar nuestros servicios.
+                        {t('cookies_analytics_text')}
                       </p>
                     </div>
                     <div className="bg-sand-gradient rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <XCircle className="w-5 h-5 text-red-600" />
-                        <h3 className="font-semibold text-foreground">Cookies de Terceros</h3>
+                        <h3 className="font-semibold text-foreground">{t('cookies_third_parties_title')}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm">
-                        No utilizamos cookies de publicidad ni seguimiento de terceros en nuestro sitio web.
+                        {t('cookies_third_parties_text')}
                       </p>
                     </div>
                   </div>
@@ -165,7 +167,7 @@ const CookiesPage = () => {
                 </div>
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                    Gestión de Cookies
+                    {t('cookies_management_title')}
                   </h2>
                   <div className="space-y-4">
                     <div className="bg-sand-gradient rounded-lg p-4">
@@ -208,10 +210,10 @@ const CookiesPage = () => {
             >
               <div className="text-center mb-8">
                 <h2 className="font-display text-3xl font-bold mb-4">
-                  ¿Dudas sobre Cookies?
+                  {t('cookies_contact_title')}
                 </h2>
                 <p className="text-primary-foreground/90">
-                  Estamos aquí para ayudarte con cualquier pregunta sobre nuestra política de cookies.
+                  {t('cookies_contact_text')}
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-6">

@@ -2,16 +2,18 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import aboutImg from "@/assets/about-interiorr.jpg";
 import { Flame, Users, Heart } from "lucide-react";
-
-const features = [
-  { icon: Flame, title: "Producto fresco", desc: "Ingredientes de mercado, cocinados con alma mediterránea cada día." },
-  { icon: Users, title: "Trato cercano", desc: "Aquí te conocemos por tu nombre. Ven una vez y vuelve siempre." },
-  { icon: Heart, title: "Espacio para todos", desc: "Un lugar abierto, inclusivo y LGBTQ+ friendly. Orgullosos de serlo." },
-];
+import { useLanguage } from "../hooks/useLanguage";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const features = [
+    { icon: Flame, title: t('about_producto'), desc: t('about_producto_desc') },
+    { icon: Users, title: t('about_trato'), desc: t('about_trato_desc') },
+    { icon: Heart, title: t('about_espacio'), desc: t('about_espacio_desc') },
+  ];
 
   return (
     <section id="nosotros" className="section-padding bg-background">
@@ -33,7 +35,7 @@ const AboutSection = () => {
             />
             <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-xl px-6 py-3 shadow-card">
               <span className="font-display text-2xl font-bold">4.8 ⭐</span>
-              <span className="text-sm ml-2 opacity-80">67 reseñas</span>
+              <span className="text-sm ml-2 opacity-80">68 reseñas</span>
             </div>
           </motion.div>
 
@@ -43,15 +45,13 @@ const AboutSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <span className="text-sm font-semibold tracking-[0.2em] uppercase text-accent mb-3 block">
-              Sobre nosotros
+              {t('about_title')}
             </span>
             <h2 className="font-display text-3xl md:text-5xl text-foreground mb-6 leading-tight font-bold">
-              En Trópico no vienes solo a comer
+              {t('about_subtitle')}
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Vienes a disfrutar, compartir y repetir. Ubicados en plena Playa de San Juan,
-              combinamos el sabor de la cocina casera mediterránea con un ambiente que te hace
-              sentir como en casa desde el primer momento.
+              {t('about_description')}
             </p>
 
             <div className="space-y-6">

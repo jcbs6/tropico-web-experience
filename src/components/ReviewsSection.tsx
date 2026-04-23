@@ -1,17 +1,19 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import { useLanguage } from "../hooks/useLanguage";
 
 const reviews = [
   { name: "María L.", text: "De los mejores sitios de la zona. Las sardinas a la plancha están de otro nivel.", rating: 5 },
   { name: "Carlos R.", text: "Comida casera brutal. Venimos siempre que podemos. El trato es inmejorable.", rating: 5 },
-  { name: "Ana & Pedro", text: "Desayunos perfectos con vistas al mar. Un sitio al que volver siempre.", rating: 5 },
-  { name: "Laura G.", text: "Servicio impecable, perfecto para una tarde de tapas. Las bravas están buenísimas.", rating: 5 },
-  { name: "David M.", text: "Relación calidad-precio inmejorable. Te hacen sentir en casa desde el primer momento.", rating: 4 },
-  { name: "Sophie B.", text: "Best tapas in San Juan beach! Great atmosphere and very friendly staff.", rating: 5 },
+  { name: "Carmen Ramirez", text: "Mi experiencia fue mágica, definitivamente todo lo que uno quiere en un solo sitio se puede encontrar en este restaurante. La mejor atención y sobretodo sus menú. Los recomiendo todos, cada sabor es más divino que otro. Felicitaciones por ser ese lugar especial al cual se puede ir en cualquier ocasión.", rating: 5 },
+  { name: "Frank Bernard.", text: "Un restaurante de tapas muy bueno con una cálida bienvenida y camareras sonrientes. Mención especial merece el Magro con Tomate, que estaba absolutamente delicioso. Excelente relación calidad-precio.", rating: 5 },
+  { name: "David M.", text: "Relación calidad-precio inmejorable. Te hacen sentir en casa desde el primer momento.", rating: 5 },
+  { name: "Miguel Ángel V.M.", text: "Excelente atención. Y muy buena la comida. 10 de 10", rating: 5 },
 ];
 
 const ReviewsSection = () => {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -25,10 +27,10 @@ const ReviewsSection = () => {
           className="text-center mb-12"
         >
           <span className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-3 block">
-            Opiniones
+            {t('reviews_title')}
           </span>
           <h2 className="font-display text-3xl md:text-5xl text-foreground mb-4 font-bold">
-            Lo que dicen nuestros clientes
+            {t('reviews_subtitle')}
           </h2>
           <div className="flex items-center justify-center gap-3 mb-2">
             <div className="flex">
@@ -38,7 +40,7 @@ const ReviewsSection = () => {
             </div>
             <span className="font-display text-2xl text-foreground font-bold">4.8</span>
           </div>
-          <p className="text-muted-foreground text-sm">Basado en 67 reseñas en Google</p>
+          <p className="text-muted-foreground text-sm">Basado en 68 reseñas en Google</p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">

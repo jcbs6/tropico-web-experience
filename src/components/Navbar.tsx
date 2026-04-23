@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const links = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Carta", href: "#carta" },
-  { label: "Galería", href: "#galeria" },
-  { label: "Opiniones", href: "#opiniones" },
-  { label: "Contacto", href: "#contacto" },
-];
+import { useLanguage } from "../hooks/useLanguage";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+
+  const links = [
+    { label: t('nav_inicio'), href: "#hero" },
+    { label: t('nav_nosotros'), href: "#nosotros" },
+    { label: t('nav_carta'), href: "#carta" },
+    { label: t('nav_galeria'), href: "#galeria" },
+    { label: t('nav_opiniones'), href: "#opiniones" },
+    { label: t('nav_contacto'), href: "#contacto" },
+  ];
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -45,6 +48,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className="flex items-center gap-3">
+            <LanguageSelector />
             <a
               href="https://www.instagram.com/tropico.restobar/"
               target="_blank"
@@ -55,7 +59,7 @@ const Navbar = () => {
               <Instagram className="w-4 h-4" />
             </a>
             <a
-              href="https://wa.me/34633549686?text=¡Hola!%20Quisiera%20hacer%20una%20reserva%20en%20Trópico%20Restobar"
+              href={`https://wa.me/34633549686?text=${encodeURIComponent(t('whatsapp_message'))}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-foreground/60 hover:text-green-400 transition-colors"
