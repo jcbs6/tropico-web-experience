@@ -1,13 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import aboutImg from "@/assets/about-interiorr.jpg";
+import terraza1 from "@/assets/terraza1.jpg";
+import terraza2 from "@/assets/terraza2.jpg";
+import interior from "@/assets/interior.jpg";
 import { Flame, Users, Heart } from "lucide-react";
 import { useLanguage } from "../hooks/useLanguage";
+import ImageCarousel from "./ImageCarousel";
 
 const AboutSection = () => {
   const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const restaurantImages = [
+    terraza1,
+    terraza2,
+    interior
+  ];
 
   const features = [
     { icon: Flame, title: t('about_producto'), desc: t('about_producto_desc') },
@@ -25,13 +34,14 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <img
-              src={aboutImg}
+            <ImageCarousel
+              images={restaurantImages}
               alt="Interior acogedor de Trópico Restobar"
-              className="rounded-2xl shadow-elevated w-full object-cover aspect-[4/5]"
-              loading="lazy"
-              width={800}
-              height={1000}
+              autoPlay={true}
+              interval={3500}
+              showDots={true}
+              showArrows={true}
+              className="shadow-elevated"
             />
             <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-xl px-6 py-3 shadow-card">
               <span className="font-display text-2xl font-bold">4.8 ⭐</span>
