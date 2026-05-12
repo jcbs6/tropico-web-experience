@@ -44,6 +44,8 @@ export const translations = {
     // Reviews Section
     reviews_title: "Lo que dicen de nosotros",
     reviews_subtitle: "La experiencia de quienes ya nos han visitado.",
+    reviews_view_all: "Ver todas las reseñas en Google",
+    reviews_leave_review: "Dejar una reseña",
     
     // Contact Section
     contact_title: "Reservas y contacto",
@@ -221,8 +223,10 @@ export const translations = {
     gallery_subtitle: "Come with your eyes",
     
     // Reviews Section
-    reviews_title: "What they say about us",
+    reviews_title: "What our customers say",
     reviews_subtitle: "The experience of those who have already visited us.",
+    reviews_view_all: "View all reviews on Google",
+    reviews_leave_review: "Leave a review",
     
     // Contact Section
     contact_title: "Reservations & Contact",
@@ -400,8 +404,10 @@ export const translations = {
     gallery_subtitle: "Entrez avec les yeux",
     
     // Reviews Section
-    reviews_title: "Ce qu'ils disent de nous",
+    reviews_title: "Ce que disent nos clients",
     reviews_subtitle: "L'expérience de ceux qui nous ont déjà visités.",
+    reviews_view_all: "Voir tous les avis sur Google",
+    reviews_leave_review: "Laisser un avis",
     
     // Contact Section
     contact_title: "Réservations & Contact",
